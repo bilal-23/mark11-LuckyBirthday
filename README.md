@@ -3,4 +3,4 @@ Description : This app takes user's DOB and his/her Lucky Number as the input an
 
 Tech Stack : React
 
-Live project is [here](https://w5dlzf.csb.app/).
+Live project is [here](https://h5yu4f.csb.app/).
