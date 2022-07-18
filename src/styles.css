@@ -27,8 +27,14 @@ body {
   background-color: var(--bg-color);
   padding: 3rem 2rem;
 }
+a,
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
 .App {
-  min-height: 95vh;
+  min-height: 80vh;
 }
 .text-center {
   text-align: center;

@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import Footer from "./components/Footer";
 import "./styles.css";
 
 export default function App() {
@@ -49,7 +50,7 @@ export default function App() {
             <input
               type="number"
               id="number"
-              placeholder="7"
+              placeholder="Enter your lucky number"
               ref={luckyNumberRef}
             />
           </div>
@@ -76,7 +77,7 @@ export default function App() {
           )}
         </div>
       </div>
-      <footer>Developed by Bilal</footer>
+      <Footer />
     </>
   );
 }
