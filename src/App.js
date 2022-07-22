@@ -12,7 +12,16 @@ export default function App() {
     e.preventDefault();
     let date = dateRef.current.value.trim();
     const luckyNumber = +luckyNumberRef.current.value.trim();
+    if (!date) {
+      setError("Date and lucky number are required to calculate, please try again");
+      return;
+    }
+    if (!luckyNumber) {
+      setError("Invalid Lucky Number");
+      return;
+    }
     if (date === "" || luckyNumber === "") {
+      setError("Invalid input")
       return;
     }
     date = date.replaceAll("-", "");
@@ -22,13 +31,12 @@ export default function App() {
       let cur = +currentValue;
       return prev + cur;
     });
-    console.log(dateSum % luckyNumber);
     if (dateSum % luckyNumber === 0) {
       setIsLuckyNumber(true);
       setError(false);
     } else {
       setIsLuckyNumber(false);
-      setError(true);
+      setError(`Your birthday is not lucky  😢`);
     }
   }
   return (
@@ -69,10 +77,7 @@ export default function App() {
           )}
           {error && !isLuckyNumber && (
             <p className="normal-text error">
-              Your Birthday Is Not Lucky
-              <span role="img" aria-label="celebrate">
-                😢
-              </span>
+              {error}
             </p>
           )}
         </div>
