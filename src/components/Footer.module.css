@@ -37,3 +37,15 @@
   filter: invert(1);
   height: 2rem;
 }
+.social_media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.social_media img {
+  filter: invert(1);
+  height: 2rem;
+  cursor: pointer;
+}

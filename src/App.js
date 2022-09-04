@@ -1,5 +1,6 @@
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import Footer from "./components/Footer";
+import PrivacyPopup from "./components/PrivacyPopup";
 import "./styles.css";
 
 export default function App() {
@@ -7,6 +8,7 @@ export default function App() {
   const luckyNumberRef = useRef();
   const [isLuckyNumber, setIsLuckyNumber] = useState();
   const [error, setError] = useState();
+  const [showPrivacyNotice, setShowPrivacyNotice] = useState(true);
 
   function formSubmitHandler(e) {
     e.preventDefault();
@@ -39,8 +41,14 @@ export default function App() {
       setError(`Your birthday is not lucky  😢`);
     }
   }
+
+  const closePopup = useCallback(() => {
+    setShowPrivacyNotice(false);
+  }, [])
+
   return (
     <>
+      {showPrivacyNotice && <PrivacyPopup closePopup={closePopup} />}
       <div className="App">
         <h1 className="heading">
           Is Your Birthday Lucky ?{" "}
