@@ -13,12 +13,21 @@
   gap: 2rem;
   align-items: center;
   padding: 5rem 2rem;
+  z-index: 100;
 }
 .modal p {
   font-size: 2rem;
   text-align: center;
 }
-
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.2);
+}
 @media screen and (max-width: 600px) {
   .modal {
     width: 30rem;
